@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+   
+	<meta charset="utf-8">
+    <meta name="author" content="Alfonso Martino">
+    <meta name="description" content="MyCryptoBalance is an android application for all those users who want to quickly and easily monitor the real time trend of their cryptocurrency investments.">
+    <meta name="keywords" content="Crypto,Portfolio,Coin Tracker,Crypto Tracker,Free,Web,Web Application,Crypto Tracking App,Bitcoin,Ethereum,Ripple,Litecoin,CoinMarketCap,Market,Finance,Coin Price,BTC,ETH,USD,EUR">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+	<link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link href="css/signin.css" rel="stylesheet">
+	 <!-- Bootstrap core CSS -->
+    <link href="css/auth/bootstrap.min.css" rel="stylesheet">
+	<script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  
+	  var config = {
+		apiKey: "AIzaSyCwbPXr4OsEpVet1dSCGWxLyGKX7gh4_T0",
+		authDomain: "mycryptobalance-567a0.firebaseapp.com",
+		databaseURL: "https://mycryptobalance-567a0.firebaseio.com",
+		projectId: "mycryptobalance-567a0",
+		storageBucket: "mycryptobalance-567a0.appspot.com",
+		messagingSenderId: "869709808894"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.7.0/firebaseui.css" />
+    <script type="text/javascript">
+      // FirebaseUI config.
+      var uiConfig = {
+        signInSuccessUrl: 'auth.html',
+        signInOptions: [
+          // Leave the lines as is for the providers you want to offer your users.
+          firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+          firebase.auth.FacebookAuthProvider.PROVIDER_ID,
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+      
+        ],
+        // Terms of service url.
+        tosUrl: '<your-tos-url>'
+      };
+
+      // Initialize the FirebaseUI Widget using Firebase.
+      var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      // The start method will wait until the DOM is loaded.
+      ui.start('#firebaseui-auth-container', uiConfig);
+    </script>
+  </head>
+  <body class="text-center">
+	
+    <form class="form-signin"> 
+	<h2 class="form-signin-heading">
+                    <em class="stackhive-marker"></em><i>MyCryptoBalance</i> 
+                </h2>
+                <hr>
+	
+    <!-- The surrounding HTML is left untouched by FirebaseUI.
+         Your app may use that space for branding, controls and other customizations.-->
+	
+
+    <div id="firebaseui-auth-container"></div>
+	
+	
+
+	</form>
+  </body>
+</html>
